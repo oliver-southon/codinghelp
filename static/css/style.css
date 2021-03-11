@@ -162,6 +162,7 @@ main {
     border-radius: 15px 50px 15px 50px;
     padding: var(--main-padding);
     padding: 5%;
+    max-height: 100%;
 }
 
 .label-head {
