@@ -127,17 +127,68 @@ nav li {
 #section-question {
     display: grid;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-    grid-template-columns: 100%;
-    grid-template-rows: 0.1fr 1fr;
-    grid-template-areas:
-    "nav",
-    "main";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+
+
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main ad"
+    "footer footer footer footer";
+    grid-gap: 0.2rem;
 }
 
+main h1 {
+    padding-bottom: 5%;
+    text-decoration: underline;
+}
 
+.nav {
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
 
 main {
-    background-color: maroon;
-    grid-area: 2 / 1 / span 1 / span 1;
+    grid-area: main;
+    background-color: #ecf0f1;
+    border-radius: 15px 50px 15px 50px;
+    padding: var(--main-padding);
+    padding: 5%;
 }
+
+.label-head {
+    text-decoration: underline;
+}
+
+.container {
+    overflow: hidden;
+}
+
+
+
+footer {
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+@media only screen and (max-width:550px){
+    #section-question {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.8fr 2fr 0.5fr;
+        grid-template-areas: 
+        "nav"
+        "sidebar"
+        "main"
+        "footer"
+    }
+}
+
